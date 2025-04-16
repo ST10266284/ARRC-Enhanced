@@ -5,12 +5,14 @@ window.addEventListener('load', () => {
 
 // Smooth Scroll
 document.querySelectorAll('.smooth-scroll').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    ['click', 'touchstart'].forEach(event => {
+        anchor.addEventListener(event, function (e) {
+            if (e.type === 'touchstart') e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+            toggleMenu();
         });
-        toggleMenu();
     });
 });
 
@@ -24,21 +26,40 @@ function toggleMenu() {
     overlay.classList.toggle('active');
 }
 
+['click', 'touchstart'].forEach(event => {
+    document.querySelector('.hamburger').addEventListener(event, toggleMenu);
+    document.getElementById('menu-overlay').addEventListener(event, toggleMenu);
+});
+
 // Scroll Animations
 const sections = document.querySelectorAll('.section');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // Trigger counters when About section is visible
             if (entry.target.id === 'about') {
                 animateCounters();
+            }
+            if (entry.target.id === 'help-us') {
+                animateHelpContent();
             }
         }
     });
 }, { threshold: 0.2 });
 
 sections.forEach(section => observer.observe(section));
+
+// Animate Help Us Content
+function animateHelpContent() {
+    const headings = document.querySelectorAll('.help-content .animate-heading');
+    const contents = document.querySelectorAll('.help-content .animate-content');
+    headings.forEach((heading, index) => {
+        heading.style.animation = `fadeIn 0.5s ease-in ${index * 0.2}s forwards`;
+    });
+    contents.forEach((content, index) => {
+        content.style.animation = `slideIn 0.5s ease-in ${index * 0.2 + 0.1}s forwards`;
+    });
+}
 
 // Sticky Navigation Highlights
 window.addEventListener('scroll', () => {
@@ -61,6 +82,10 @@ window.addEventListener('scroll', () => {
 const backToTop = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
     backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+
+['click', 'touchstart'].forEach(event => {
+    backToTop.addEventListener(event, scrollToTop);
 });
 
 function scrollToTop() {
@@ -106,9 +131,10 @@ document.querySelector('.carousel').addEventListener('touchend', e => {
 
 // Card Flip Effect
 document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('touchstart', e => {
-        e.preventDefault();
-        card.classList.toggle('tapped');
+    ['click', 'touchstart'].forEach(event => {
+        card.addEventListener(event, () => {
+            card.classList.toggle('tapped');
+        });
     });
 });
 
@@ -134,7 +160,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const stars = [];
-for (let i = 0; i < (window.innerWidth < 768 ? 20 : 50); i++) {
+for (let i = 0; i < 50; i++) {
     stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -157,38 +183,32 @@ function animateStarfield() {
     requestAnimationFrame(animateStarfield);
 }
 
-if (window.innerWidth >= 768) animateStarfield();
+animateStarfield();
 
 // Paw Print Burst
 document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-        for (let i = 0; i < 5; i++) {
-            const paw = document.createElement('div');
-            paw.className = 'paw-burst';
-            paw.style.left = `${e.clientX}px`;
-            paw.style.top = `${e.clientY}px`;
-            const angle = (i / 5) * Math.PI * 2;
-            paw.style.animation = `burstPaw 0.5s ease-out ${i * 0.05}s`;
-            paw.style.transform = `translate(${Math.cos(angle) * 20}px, ${Math.sin(angle) * 20}px)`;
-            document.body.appendChild(paw);
-            setTimeout(() => paw.remove(), 600);
-        }
-    });
-
-    btn.addEventListener('touchstart', e => {
-        e.preventDefault();
-        const touch = e.touches[0];
-        for (let i = 0; i < 5; i++) {
-            const paw = document.createElement('div');
-            paw.className = 'paw-burst';
-            paw.style.left = `${touch.clientX}px`;
-            paw.style.top = `${touch.clientY}px`;
-            const angle = (i / 5) * Math.PI * 2;
-            paw.style.animation = `burstPaw 0.5s ease-out ${i * 0.05}s`;
-            paw.style.transform = `translate(${Math.cos(angle) * 20}px, ${Math.sin(angle) * 20}px)`;
-            document.body.appendChild(paw);
-            setTimeout(() => paw.remove(), 600);
-        }
+    ['click', 'touchstart'].forEach(event => {
+        btn.addEventListener(event, e => {
+            let clientX, clientY;
+            if (e.type === 'touchstart') {
+                clientX = e.touches[0].clientX;
+                clientY = e.touches[0].clientY;
+            } else {
+                clientX = e.clientX;
+                clientY = e.clientY;
+            }
+            for (let i = 0; i < 5; i++) {
+                const paw = document.createElement('div');
+                paw.className = 'paw-burst';
+                paw.style.left = `${clientX}px`;
+                paw.style.top = `${clientY}px`;
+                const angle = (i / 5) * Math.PI * 2;
+                paw.style.animation = `burstPaw 0.5s ease-out ${i * 0.05}s`;
+                paw.style.transform = `translate(${Math.cos(angle) * 20}px, ${Math.sin(angle) * 20}px)`;
+                document.body.appendChild(paw);
+                setTimeout(() => paw.remove(), 600);
+            }
+        });
     });
 });
 
@@ -223,11 +243,13 @@ if (typewriter) {
 
 // Lightbox for Images
 document.querySelectorAll('.card img, .fund-breakdown, .map img').forEach(img => {
-    img.addEventListener('click', () => {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
+    ['click', 'touchstart'].forEach(event => {
+        img.addEventListener(event, () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+        });
     });
 });
 
@@ -243,6 +265,14 @@ function openModal(id) {
 function closeModal(id) {
     document.getElementById(`${id}-modal`).style.display = 'none';
 }
+
+['click', 'touchstart'].forEach(event => {
+    document.querySelectorAll('.close').forEach(closeBtn => {
+        closeBtn.addEventListener(event, () => {
+            closeModal(closeBtn.closest('.modal').id.split('-')[0]);
+        });
+    });
+});
 
 // Form Submission
 document.getElementById('contact-form').addEventListener('submit', e => {
@@ -280,12 +310,6 @@ function animateCounters() {
     });
 }
 
-// Collapsible Sections
-function toggleCollapse(element) {
-    const content = element.nextElementSibling;
-    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-}
-
 // Cat Fact Generator
 const catFacts = [
     "Cats can jump up to five times their own height in a single leap.",
@@ -317,13 +341,11 @@ progressFill.style.width = `${(currentDonation / donationGoal) * 100}%`;
 
 // Image Drift
 document.querySelectorAll('.drift').forEach(img => {
-    if (window.innerWidth >= 768) {
-        window.addEventListener('scroll', () => {
-            const rect = img.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                const scrollY = window.scrollY / 50;
-                img.style.transform = `translateY(${scrollY % 10}px) translateX(${scrollY % 5}px)`;
-            }
-        });
-    }
+    window.addEventListener('scroll', () => {
+        const rect = img.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            const scrollY = window.scrollY / 50;
+            img.style.transform = `translateY(${scrollY % 10}px) translateX(${scrollY % 5}px)`;
+        }
+    });
 });
