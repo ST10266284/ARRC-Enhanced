@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRC Durban - Animal Rescue & Rehab Centre</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="cat-icon" viewBox="0 0 100 100">
+                <path d="M30,20 C20,20 10,30 10,40 C10,50 20,60 30,60 L70,60 C80,60 90,50 90,40 C90,30 80,20 70,20 Z" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Floating Donate Button -->
+    <a href="#help-us" class="floating-donate btn smooth-scroll">Donate Now</a>
+
+    <!-- Sidebar Menu -->
+    <nav id="sidebar">
+        <div class="logo">
+            <img src="images/logo.png" alt="ARRC Logo">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-links">
+            <li><a href="#home" class="smooth-scroll">Home</a></li>
+            <li><a href="#about" class="smooth-scroll">About</a></li>
+            <li><a href="#new-beginning" class="smooth-scroll">A New Beginning</a></li>
+            <li><a href="#cats" class="smooth-scroll">Our Cats</a></li>
+            <li><a href="#mission" class="smooth-scroll">Our Mission</a></li>
+            <li><a href="#success" class="smooth-scroll">Success Stories</a></li>
+            <li><a href="#visit-us" class="smooth-scroll">Visit Us</a></li>
+            <li><a href="#volunteer" class="smooth-scroll">Volunteer</a></li>
+            <li><a href="#help-us" class="smooth-scroll">Help Us</a></li>
+            <li><a href="#contact" class="smooth-scroll">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay for Mobile Menu -->
+    <div id="menu-overlay" onclick="toggleMenu()"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section hero">
+            <div class="parallax-bg">
+                <video autoplay muted loop class="hero-video">
+                    <source src="assets/cat-video.mp4" type="video/mp4">
+                </video>
+                <div class="parallax-layer"></div>
+            </div>
+            <div class="container">
+                <h1 class="typewriter">Welcome to ARRC Durban</h1>
+                <p>Animal Rescue & Rehab Centre in Crestholme, Durban is almost 8 years old. ARRC is a registered NPO
+                    that focuses on the rescue, rehabilitation and rehoming of feral and stray cats in Durban, South
+                    Africa. We rely solely on donations from our community to continue our work.</p>
+                <a href="#help-us" class="btn smooth-scroll">
+                    <svg class="cat-ear" viewBox="0 0 24 24">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                    Get Involved
+                </a>
+                <div class="scroll-indicator">↓ Scroll Down</div>
+            </div>
+            <canvas id="starfield"></canvas>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About ARRC</h2>
+                <p>Animal Rescue & Rehab Centre – ARRC in Crestholme, Durban is almost 8 years old. Shelley, our
+                    remarkable founder started the shelter for the feral cats that she was feeding at Albert Luthuli
+                    Central Hospital that were getting killed by the feral dogs and by the staff. She now has a farm
+                    full of rescued cats, some dogs, a pig and rescued chickens. In addition, she feeds and medicates
+                    feral cats in Durban after work each day.</p>
+                <p>The cats at the shelter have all been rescued as ferals, and all have their own sad stories to tell
+                    of being abused, burnt with boiling water, oil or acid, poisoned, caught in snares, knocked over by
+                    motor vehicles, shot, stabbed, savaged by dogs, rescued from storm drains, starved or some other
+                    hideous history. Each cat is inoculated and sterilised before coming into the shelter or after
+                    trauma recovery, and kittens are sterilised once they reach the required age.</p>
+                <p>We also run a TNR (Trap-Neuter-Release) programme for the ferals in our area and we educate our
+                    community on the importance of sterilisation to prevent overpopulation of stray cats in Durban.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="counter" data-target="500">0</span>
+                        <p>Cats Helped</p>
+                    </div>
+                    <div class="stat">
+                        <span class="counter" data-target="8">0</span>
+                        <p>Years Running</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- A New Beginning Section -->
+        <section id="new-beginning" class="section">
+            <div class="container">
+                <h2>A New Beginning</h2>
+                <p>Every cat has a name and each is loved with every fibre of Shelley’s being. She is selfless in all
+                    she does. The shelter has 2 large 1.5 acres “runs” which have lots of trees, bushes, sheds with
+                    double beds, wooden kennels with warm bedding & blankets, jungle gyms and lots of sheltered areas.
+                    There are no “cages” except for the 3 side “runs” which are enclosed at the top where newcomers get
+                    orientated. Many of the cats are “yard” cats that roam freely around the house and 7-acre property.
+                </p>
+                <p>The cats have a very healthy diet, and their daily food consists of 8kg raw, cubed pork kidneys, 5kg
+                    raw chicken necks, 8kg roasted, deboned chicken, 5kg of chicken livers, 1 kg of minced cooked ox
+                    lungs, 60 tins of cat food, 80-100 cat sachets for the special cases, + 15kg good quality dry food
+                    (Hills Optimum care, Royal Canin Ageing, Mom and Baby cat and Kitten, and Iams Multicat) per day and
+                    tins of Mom and Baby cat Mousse, Hills A/D, K/D and C/D and Royal Canin S/O for those with medical
+                    conditions.</p>
+                <p>The cats amaze Shelley every day and she learns something new from them all the time. There has been
+                    an awful lot of heartache along the way, the devastation when one passes or a rescue doesn’t end as
+                    it should. The life of a feral cat is a hard, miserable one, so Shelley’s main aim is to give the
+                    rescues the best life she can, and to show them that not all humankind is cruel. If one passes, at
+                    least I have tried to give them a second chance and they don’t die cold, hungry and unloved.</p>
+            </div>
+        </section>
+
+        <!-- Cats Section -->
+        <section id="cats" class="section">
+            <div class="container">
+                <h2>Our Cats</h2>
+                <p>These beautiful felines are looking for their forever homes. All our cats are vaccinated, sterilised,
+                    dewormed, deflead and microchipped before they are adopted out. If you would like to meet any of our
+                    cats, please contact us to arrange a visit.</p>
+                <button class="btn" onclick="showCatFact()">
+                    <svg class="cat-ear" viewBox="0 0 24 24">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                    Get a Cat explotFact
+                </button>
+                <p id="cat-fact" style="display: none; margin-top: 20px;"></p>
+                <div class="gallery">
+                    <div class="card drift">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="images/cat1.jpg" alt="Cat" loading="lazy">
+                            </div>
+                            <div class="card-back">
+                                <div class="bio">
+                                    <h3>Playful Cat</h3>
+                                    <p>Loves chasing toys and cuddling.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card drift">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="images/cat2.jpg" alt="Cat" loading="lazy">
+                            </div>
+                            <div class="card-back">
+                                <div class="bio">
+                                    <h3>Relaxed Cat</h3>
+                                    <p>Enjoys sunbathing and napping.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card drift">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="images/cat3.jpg" alt="Cat" loading="lazy">
+                            </div>
+                            <div class="card-back">
+                                <div class="bio">
+                                    <h3>Gentle Cat</h3>
+                                    <p>Prefers calm and quiet spaces.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card drift">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="images/cat4.jpg" alt="Cat" loading="lazy">
+                            </div>
+                            <div class="card-back">
+                                <div class="bio">
+                                    <h3>Curious Cat</h3>
+                                    <p>Always exploring new adventures.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section id="mission" class="section">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <p>At ARRC, our mission is to provide a safe haven for feral and stray cats, offering them love, care,
+                    and a chance at a better life. We aim to reduce overpopulation through our TNR program, educate our
+                    community on animal welfare, and find loving forever homes for our rescued cats. Every life matters,
+                    and we strive to make a lasting impact in Durban and beyond.</p>
+            </div>
+        </section>
+
+        <!-- Success Stories Section -->
+        <section id="success" class="section">
+            <div class="container">
+                <h2>Success Stories</h2>
+                <div class="carousel">
+                    <div class="slide active">
+                        <p>"Adopting a cat from ARRC was the best decision we made. She’s brought so much joy to our
+                            home!"</p>
+                        <h4>- The Smith Family</h4>
+                    </div>
+                    <div class="slide">
+                        <p>"Thanks to ARRC, our cat found a loving home after a tough start in life."</p>
+                        <h4>- Sarah & John</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visit Us Section -->
+        <section id="visit-us" class="section">
+            <div class="container">
+                <h2>Visit Us</h2>
+                <p>All the cats at ARRC absolutely love when visitors come – they can’t get enough of all the head
+                    scratches, cat nip licks and belly rubs.</p>
+                <p>We are open on Sundays from 11 am for all visitors, new and old.</p>
+                <p>Our regulars are welcome anytime – just be sure to let us know you’ll be coming!</p>
+                <p>Please fill in the form below to visit the kitties of ARRC.</p>
+                <form id="visitor-form">
+                    <input type="text" id="visitor-name" placeholder="Name" required>
+                    <input type="email" id="visitor-email" placeholder="Email" required>
+                    <input type="date" id="visit-date" required>
+                    <button type="submit" class="btn">
+                        <svg class="cat-ear" viewBox="0 0 24 24">
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                        Plan Your Visit
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Volunteer Section -->
+        <section id="volunteer" class="section">
+            <div class="container">
+                <h2>Volunteer</h2>
+                <p>Shelley and the adorable cats of ARRC welcome volunteers with open arms.</p>
+                <p>From 6 pm every evening there are hundreds of cats not only at ARRC but all over Durban that need
+                    help being fed, medicated, and sometimes trapped for medical care. Our runs also often need extra
+                    maintenance and care.</p>
+                <p>Please fill in the form below to become an ARRC HERO.</p>
+                <button class="btn" onclick="openModal('volunteer')">
+                    <svg class="cat-ear" viewBox="0 0 24 24">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                    Become a Volunteer
+                </button>
+            </div>
+        </section>
+
+        <!-- Help Us Section -->
+        <section id="help-us" class="section">
+            <div class="container">
+                <h2>Help Us</h2>
+                <p>We are always in need of donations to keep our shelter running and any contribution of food, litter
+                    or funds goes a long way to helping us continue our work.</p>
+                <p>We also have a wishlist of items that we always need:<br>
+                    - Cat Food (Pellets and Wet Food)<br>
+                    - Cat Litter<br>
+                    - Blankets and Towels<br>
+                    - Cleaning Supplies</p>
+                <div class="donation-tracker">
+                    <p>Donation Goal: R50,000</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%;"></div>
+                        <span class="tooltip">60% Reached</span>
+                    </div>
+                </div>
+                <div class="collapsible">
+                    <h3 onclick="toggleCollapse(this)">Our Back-a-Buddy Page</h3>
+                    <div class="collapse-content">
+                        <p>Funds can be donated into our Back-a-Buddy account by clicking the link below.</p>
+                        <a href="https://www.backabuddy.co.za/charity/profile/arrc" target="_blank" class="btn">
+                            <svg class="cat-ear" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                            Donate via Back-a-Buddy
+                        </a>
+                    </div>
+                </div>
+                <div class="collapsible">
+                    <h3 onclick="toggleCollapse(this)">Donate Funds to Our Bank Account</h3>
+                    <div class="collapse-content">
+                        <p>To contribute to the funds that go towards us staying open:</p>
+                        <p>ARRC<br>
+                            Capitec Bank<br>
+                            Savings Account<br>
+                            A/C# 1468624979<br>
+                            Branch code: 47 00 10</p>
+                    </div>
+                </div>
+                <div class="collapsible">
+                    <h3 onclick="toggleCollapse(this)">Donate Funds to Our Vet’s Bills</h3>
+                    <div class="collapse-content">
+                        <p>Our incredible vets at Montclair Animal Hospital take such amazing care of our cats that need
+                            medical care. To contribute to our humongous bill here:</p>
+                        <p>Montclair Animal Hospital<br>
+                            FNB<br>
+                            A/C# 62914436169<br>
+                            Ref. ARRC 677</p>
+                        <p>Please send your proof of payment to <a
+                                href="mailto:pop@montclairvet.durban">pop@montclairvet.durban</a> or <a
+                                href="tel:+27828793383">0828793383</a>.</p>
+                    </div>
+                </div>
+                <div class="collapsible">
+                    <h3 onclick="toggleCollapse(this)">Our Costings</h3>
+                    <div class="collapse-content">
+                        <p>Take a look at our full comprehensive costings for insight into our daily needs.</p>
+                        <table class="costings-table">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Frequency</th>
+                                    <th>Cost</th>
+                                    <th>Provider</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Vet - Emergencies</td>
+                                    <td>As necessary</td>
+                                    <td>R5000.00 deposit</td>
+                                    <td>Hillcrest Vet Hospital</td>
+                                    <td>Can name cats treated</td>
+                                </tr>
+                                <tr>
+                                    <td>Fuel - Sat trips to Vet</td>
+                                    <td>Weekly</td>
+                                    <td>R120.00 return</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Garden Maintenance</td>
+                                    <td>Every 2nd Month</td>
+                                    <td>R2500.00</td>
+                                    <td>Gardens of Delight</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="assets/costings.pdf" target="_blank" class="btn">
+                            <svg class="cat-ear" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                            View Full Costings
+                        </a>
+                    </div>
+                </div>
+                <img src="images/fund-breakdown.jpg" alt="Fund Breakdown" class="fund-breakdown drift" loading="lazy">
+                <div class="progress-rings">
+                    <div class="ring">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="track" cx="60" cy="60" r="50"></circle>
+                            <circle class="progress" cx="60" cy="60" r="50" data-percent="70"></circle>
+                        </svg>
+                        <p>Donation Goal</p>
+                        <span>70%</span>
+                    </div>
+                    <div class="ring">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="track" cx="60" cy="60" r="50"></circle>
+                            <circle class="progress" cx="60" cy="60" r="50" data-percent="50"></circle>
+                        </svg>
+                        <p>Volunteer Hours</p>
+                        <span>50%</span>
+                    </div>
+                </div>
+                <div class="donation-slider">
+                    <p>Choose Donation Amount:</p>
+                    <input type="range" min="50" max="1000" value="100" step="50" id="donation-amount">
+                    <span id="amount-display">R100</span>
+                    <a href="https://www.payfast.co.za/donate/go/arrc" target="_blank" class="btn">
+                        <svg class="cat-ear" viewBox="0 0 24 24">
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                        Donate via PayFast
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Email: <a href="mailto:hello@arrc-dbn.org.za">hello@arrc-dbn.org.za</a><br>
+                    Phone: <a href="tel:+27828793383">+27 82 879 3383</a><br>
+                    Address: Crestholme, Durban, South Africa</p>
+                <p>Follow us on social media:</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/arrc_crestholme_durban/" target="_blank">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.332.014 7.052.072 2.95.24 0 3.332 0 7.423v9.154c0 4.091 2.95 7.183 7.052 7.351 1.28.058 1.689.072 4.948.072s3.668-.014 4.948-.072c4.102-.168 7.052-3.26 7.052-7.351V7.423c0-4.091-2.95-7.183-7.052-7.351-1.28-.058-1.689-.072-4.948-.072zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
+                        </svg>
+                    </a>
+                </div>
+                <p>We would love to hear from you! Please fill in the form below and we will get back to you as soon as
+                    possible.</p>
+                <div class="map">
+                    <img src="assets/map-placeholder.jpg" alt="Crestholme Map" class="drift" loading="lazy">
+                </div>
+                <form id="contact-form">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <textarea id="message" placeholder="Message" required></textarea>
+                    <fieldset>
+                        <legend>Purpose of Contact</legend>
+                        <label><input type="checkbox" name="purpose" value="volunteer"> Volunteer</label>
+                        <label><input type="checkbox" name="purpose" value="visit"> Visit Us</label>
+                        <label><input type="checkbox" name="purpose" value="other"> Other</label>
+                    </fieldset>
+                    <button type="submit" class="btn">
+                        <svg class="cat-ear" viewBox="0 0 24 24">
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                        Send
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 ARRC Durban. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/arrc_crestholme_durban/" target="_blank">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.332.014 7.052.072 2.95.24 0 3.332 0 7.423v9.154c0 4.091 2.95 7.183 7.052 7.351 1.28.058 1.689.072 4.948.072s3.668-.014 4.948-.072c4.102-.168 7.052-3.26 7.052-7.351V7.423c0-4.091-2.95-7.183-7.052-7.351-1.28-.058-1.689-.072-4.948-.072zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="#home" class="smooth-scroll">Home</a>
+                <a href="#about" class="smooth-scroll">About</a>
+                <a href="#cats" class="smooth-scroll">Our Cats</a>
+                <a href="#help-us" class="smooth-scroll">Help Us</a>
+                <a href="#contact" class="smooth-scroll">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="volunteer-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('volunteer')">×</span>
+            <h2>Volunteer with ARRC</h2>
+            <form id="volunteer-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Why do you want to volunteer?" required></textarea>
+                <button type="submit" class="btn">
+                    <svg class="cat-ear" viewBox="0 0 24 24">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+    <div id="donate-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('donate')">×</span>
+            <h2>Donate to ARRC</h2>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="number" placeholder="Amount (ZAR)" required>
+                <button type="submit" class="btn">
+                    <svg class="cat-eye" viewBox="0 0 24 24">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                    Donate
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
